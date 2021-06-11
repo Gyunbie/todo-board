@@ -1,4 +1,7 @@
 class Item
+  attr_accessor :title, :description
+  attr_reader :deadline, :done
+
   def self.valid_date?(str)
     arr = str.split("-")
 
@@ -13,13 +16,15 @@ class Item
     @title = title    
     @deadline = deadline
     @description = description
+    @done = false
   end
-
-  attr_accessor :title, :description
-  attr_reader :deadline
 
   def deadline=(deadline)
     raise "Incorrect date." unless Item.valid_date?(deadline)
     @deadline = deadline
+  end
+
+  def toggle
+    @done = !@done
   end
 end
