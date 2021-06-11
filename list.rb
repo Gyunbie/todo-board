@@ -57,7 +57,7 @@ class List
       item = @items[index]
       is_done = item.done ? CHECKMARK : " "
       puts SEPARATOR
-      puts "#{item.title.ljust(20)} #{item.deadline} #{is_done}"
+      puts "#{item.title.ljust(20)} #{item.deadline} [#{is_done}]"
       puts "#{item.description}"
     end
   end
